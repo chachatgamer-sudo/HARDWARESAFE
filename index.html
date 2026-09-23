@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HardwareSafe - Le Guide Libre et Gratuit de l'Achat-Revente & Montage PC</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .glow-accent {
+            box-shadow: 0 0 40px -10px rgba(59, 130, 246, 0.2);
+        }
+        .glow-banner {
+            box-shadow: 0 0 30px -5px rgba(239, 68, 68, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white pt-12 md:pt-10">
+
+    <!-- GRANDE BANDEROLE DE PRÉVENTION ANTI-SCAM (NEUTRE) -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-red-600 via-rose-600 to-orange-600 text-white px-4 py-2.5 text-xs font-bold text-center flex items-center justify-center space-x-3 glow-banner">
+        <i class="fa-solid fa-triangle-exclamation text-base animate-bounce"></i>
+        <span>ALERTE ARNAQUE : Ne payez jamais de formations hors de prix qui promettent des gains magiques ! Tout le savoir technique est ici 100% gratuit.</span>
+        <a href="#prevention" class="hidden sm:inline-block bg-white/20 hover:bg-white/30 px-2.5 py-1 rounded-lg transition text-[11px] underline">En savoir plus</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-11 md:top-10 left-0 right-0 z-40 bg-gray-950/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">HARDWARE<span class="text-blue-500">SAFE</span></span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+                <a href="#guides" class="hover:text-blue-400 transition">Guides Gratuits</a>
+                <a href="#prevention" class="hover:text-red-400 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-triangle-exclamation text-xs text-red-500"></i>
+                    <span>Anti-Scam & Réalité</span>
+                </a>
+                <a href="https://discord.gg/hDeEmDWnw" target="_blank" class="hover:text-indigo-400 transition flex items-center space-x-1.5">
+                    <i class="fa-brands fa-discord text-xs text-indigo-400"></i>
+                    <span>Discord Communautaire</span>
+                </a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="https://discord.gg/hDeEmDWnw" target="_blank" class="hidden sm:flex bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-2.5 rounded-xl text-sm font-bold transition items-center space-x-2 shadow-lg shadow-indigo-600/20">
+                    <i class="fa-brands fa-discord"></i>
+                    <span>Rejoindre le Discord</span>
+                </a>
+                <a href="https://www.buymeacoffee.com" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-gray-950 px-3.5 py-2.5 rounded-xl text-sm font-bold transition shadow-lg shadow-amber-500/20 flex items-center space-x-2">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span class="hidden sm:inline">Offrir un café</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-gray-950/0 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 flex flex-col space-y-6 text-left">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1.5 rounded-full text-emerald-400 text-xs font-bold w-fit">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>100% Gratuit, Ouvert et Sans Promesses Magiques</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Le savoir hardware doit être <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">libre</span>, pas payant.
+                </h1>
+
+                <p class="text-base md:text-lg text-gray-400 max-w-2xl leading-relaxed">
+                    Marre des formations hors de prix vendues par des influenceurs surfant sur le mirage de l'argent facile ? Ici, tout est open-source, technique et transparent. Apprends à tester, monter et revendre des PC sainement.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                    <a href="#guides" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-xl shadow-blue-600/30 flex items-center justify-center space-x-2">
+                        <span>Accéder aux guides</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="https://discord.gg/hDeEmDWnw" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-xl text-center transition shadow-xl shadow-indigo-600/20 flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>Rejoindre l'entraide Discord</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-900 text-gray-400 text-xs">
+                    <div>
+                        <div class="text-white text-lg font-bold">0€</div>
+                        <div>Aucun contenu bloqué</div>
+                    </div>
+                    <div>
+                        <div class="text-white text-lg font-bold">Anti-Bullshit</div>
+                        <div>Vraies données techniques</div>
+                    </div>
+                    <div>
+                        <div class="text-white text-lg font-bold">Communauté</div>
+                        <div>Entraide saine</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARTE MANIFESTE -->
+            <div class="lg:col-span-5">
+                <div class="bg-gray-900/80 border border-gray-800 rounded-3xl p-6 glow-accent flex flex-col space-y-6">
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+                        <span class="text-sm font-bold text-gray-300 flex items-center space-x-2">
+                            <i class="fa-solid fa-bullhorn text-blue-500"></i>
+                            <span>Notre Manifeste</span>
+                        </span>
+                        <span class="text-xs bg-blue-500/15 text-blue-400 px-2.5 py-1 rounded-lg border border-blue-500/20 font-mono">Open Source</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs text-gray-300 leading-relaxed">
+                        <p>
+                            L'achat-revente de PC d'occasion demande de vraies compétences techniques : tester l'alimentation, repérer les fausses cartes graphiques reflashées, optimiser le flux d'air...
+                        </p>
+                        <p class="text-gray-400">
+                            Ce n'est pas un secret magique qu'il faut monnayer à prix d'or, mais de la technique pure partagée pour tout le monde.
+                        </p>
+                    </div>
+
+                    <div class="bg-amber-500/10 p-4 rounded-2xl border border-amber-500/20 flex items-center justify-between">
+                        <div class="space-y-0.5">
+                            <div class="text-xs font-bold text-amber-400">Envie de soutenir le projet ?</div>
+                            <div class="text-[11px] text-gray-400">Pas de formation payante, juste un café si le site t'a aidé.</div>
+                        </div>
+                        <a href="https://www.buymeacoffee.com" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-gray-950 px-3.5 py-2 rounded-xl text-xs font-bold transition shrink-0">
+                            Soutenir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRÉVENTION / LES PIÈGES DU WEB -->
+    <section id="prevention" class="py-24 bg-gray-950 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">La Réalité vs. Les Formations Pièges</h2>
+                <p class="text-gray-400 text-sm md:text-base">
+                    Pourquoi certains créateurs vendent du rêve et comment repérer leurs méthodes basées sur l'illusion.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Arnaque type -->
+                <div class="bg-gray-900/50 border border-red-500/20 p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-red-500/10 text-red-400 px-3 py-1 rounded-lg text-xs font-bold">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>Le piège du marketing illusoire</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Le mirage de l'argent facile</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Faire croire qu'on peut s'enrichir en quelques clics sans rien connaître au hardware, en rejoignant des groupes payants fermés où toute critique est censurée.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-red-400 font-semibold">
+                        ❌ Culture de la promesse irréaliste et du chiffre gonflé.
+                    </div>
+                </div>
+
+                <!-- Notre vision -->
+                <div class="bg-gray-900/50 border border-blue-500/20 p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-blue-500/10 text-blue-400 px-3 py-1 rounded-lg text-xs font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Notre Approche Transparente</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Le vrai travail d'artisan hardware</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            L'achat-revente demande de la rigueur, de la gestion, des tests de stabilité et un service client irréprochable. C'est un complément de revenu basé sur des compétences réelles.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-blue-400 font-semibold">
+                        ✔️ Partage libre, entraide technique et bienveillance.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIDES GRATUITS -->
+    <section id="guides" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">Les Guides Techniques en Accès Libre</h2>
+                <p class="text-gray-400 text-sm md:text-base">
+                    Clique sur un guide pour lire son contenu complet rédigé par des passionnés.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Guide 1 -->
+                <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-blue-500/40 transition">
+                    <div class="space-y-3">
+                        <span class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 font-bold flex items-center justify-center border border-blue-500/30 text-sm">01</span>
+                        <h3 class="font-bold text-white text-base">Test & Audit des Composants</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Maîtrisez OCCT, FurMark, 3DMark et CrystalDiskInfo pour auditer l'état réel d'un PC d'occasion sans vous faire avoir.</p>
+                    </div>
+                    <button onclick="openModal('modal-1')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-xl text-xs transition shadow-lg shadow-blue-600/20">
+                        Lire le guide complet
+                    </button>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-blue-500/40 transition">
+                    <div class="space-y-3">
+                        <span class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 font-bold flex items-center justify-center border border-blue-500/30 text-sm">02</span>
+                        <h3 class="font-bold text-white text-base">Montage, BIOS & Profils EXPO</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Guide complet du câblage propre, des branchements front-panel, des réglages BIOS essentiels et de l'optimisation RAM.</p>
+                    </div>
+                    <button onclick="openModal('modal-2')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-xl text-xs transition shadow-lg shadow-blue-600/20">
+                        Lire le guide complet
+                    </button>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-blue-500/40 transition">
+                    <div class="space-y-3">
+                        <span class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 font-bold flex items-center justify-center border border-blue-500/30 text-sm">03</span>
+                        <h3 class="font-bold text-white text-base">Négociation & Anti-Arnaque</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Déjouez les pièges des faux paiements sur LeBonCoin/Vinted, repérez les arnaques et négociez au juste prix.</p>
+                    </div>
+                    <button onclick="openModal('modal-3')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-xl text-xs transition shadow-lg shadow-blue-600/20">
+                        Lire le guide complet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION APPEL DISCORD -->
+    <section class="py-16 bg-indigo-950/20 border-t border-indigo-500/20 text-center">
+        <div class="max-w-4xl mx-auto px-6 space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center mx-auto text-2xl shadow-lg shadow-indigo-500/30">
+                <i class="fa-brands fa-discord"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Rejoins la communauté sur Discord</h2>
+            <p class="text-xs md:text-sm text-gray-300 max-w-lg mx-auto">
+                Échange des conseils, fais valider tes configurations par des passionnés, et évite les arnaques en direct.
+            </p>
+            <div class="pt-2">
+                <a href="https://discord.gg/hDeEmDWnw" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-3.5 rounded-xl text-xs transition shadow-lg shadow-indigo-600/30 inline-flex items-center space-x-2">
+                    <i class="fa-brands fa-discord"></i>
+                    <span>Accéder au serveur Discord</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 border-t border-gray-900 py-12 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-6 space-y-4">
+            <div class="flex items-center justify-center space-x-2 text-white font-bold">
+                <div class="w-6 h-6 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <span>HARDWARESAFE</span>
+            </div>
+            <p>Ressource libre et gratuite dédiée au partage de connaissances sur le matériel informatique.</p>
+            <div class="flex justify-center space-x-4 pt-2 text-gray-400">
+                <a href="https://discord.gg/hDeEmDWnw" target="_blank" class="hover:text-indigo-400 transition"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://www.buymeacoffee.com" target="_blank" class="hover:text-amber-400 transition"><i class="fa-solid fa-mug-hot"></i> Soutenir</a>
+            </div>
+            <p>&copy; 2026 HardwareSafe. Fait pour la communauté, par passion.</p>
+        </div>
+    </footer>
+
+    <!-- ================= MODALE GUIDE 1 : TEST DES COMPOSANTS ================= -->
+    <div id="modal-1" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-gray-900 border border-gray-800 rounded-3xl max-w-3xl w-full p-6 md:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto text-left">
+            <button onclick="closeModal('modal-1')" class="absolute top-6 right-6 text-gray-400 hover:text-white bg-gray-800 p-2 rounded-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="space-y-2">
+                <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Guide Technique N°1</span>
+                <h3 class="text-2xl font-extrabold text-white">Comment tester des composants d'occasion comme un pro</h3>
+            </div>
+            <div class="space-y-4 text-xs md:text-sm text-gray-300 leading-relaxed">
+                <p>Acheter ou revendre du matériel informatique d'occasion (CPU, GPU, RAM, SSD) exige une rigueur absolue. Un composant qui semble fonctionner sur le bureau peut crasher dès qu'il est mis en charge. Voici la boîte à outils logicielle indispensable et la méthodologie d'audit.</p>
+                
+                <h4 class="font-bold text-white text-base pt-2">1. Tester la Carte Graphique (GPU) : FurMark & 3DMark</h4>
+                <p>La carte graphique est la pièce la plus risquée et la plus chère d'un PC d'occasion.</p>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li><strong>FurMark (Stress Test) :</strong> Lancez un test de stress en 1080p ou 1440p pendant 15 à 20 minutes. Surveillez la température maximale et le "Hot Spot". Au-delà de 90-95°C sur le Hot Spot, la pâte thermique ou les pads sont rincés. Si le PC plante, redémarre ou affiche des artefacts visuels (points verts/roses, carrés noirs), fuyez.</li>
+                    <li><strong>3DMark (Benchmark) :</strong> Exécutez le test gratuit <em>Time Spy</em>. Comparez votre score final avec la moyenne des possesseurs de la même carte pour vérifier qu'elle ne souffre pas de throttling ou d'un sous-performance cachée.</li>
+                </ul>
+
+                <h4 class="font-bold text-white text-base pt-2">2. Tester le Processeur (CPU) & la Stabilité Globale : OCCT</h4>
+                <p><strong>OCCT</strong> est le juge de paix absolu de la stabilité d'une machine.</p>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li>Lancez l'onglet <strong>CPU</strong> en mode "Extrême / Fixe" pendant 20 minutes. Cela pousse le processeur à 100% de charge thermique et électrique.</li>
+                    <li>Surveillez les erreurs détectées par le logiciel : si OCCT lève la moindre erreur de calcul, le CPU est instable (mauvais contact, tension inadaptée ou dégradation matérielle).</li>
+                    <li>Vérifiez l'onglet <strong>Power</strong> pour tester simultanément le CPU et l'alimentation (PSU) sous forte charge combinée.</li>
+                </ul>
+
+                <h4 class="font-bold text-white text-base pt-2">3. Vérifier la santé des Stockages : CrystalDiskInfo</h4>
+                <p>Un SSD défectueux peut corrompre le système d'exploitation à tout moment.</p>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li>Ouvrez <strong>CrystalDiskInfo</strong> : l'état de santé global doit impérativement afficher <em>"Correct" (en vert)</em>. Si le statut indique "Prudence" ou "Mauvais", le disque a des secteurs défectueux irrécupérables.</li>
+                    <li>Regardez le nombre total de téraoctets écrits (TBW) et le nombre d'heures d'allumage pour estimer l'usure réelle du SSD NVMe ou SATA.</li>
+                </ul>
+            </div>
+            <div class="pt-4 border-t border-gray-800 flex justify-between items-center">
+                <span class="text-[11px] text-gray-500">HardwareSafe - Open Source Knowledge</span>
+                <button onclick="closeModal('modal-1')" class="bg-gray-800 hover:bg-gray-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MODALE GUIDE 2 : MONTAGE & BIOS ================= -->
+    <div id="modal-2" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-gray-900 border border-gray-800 rounded-3xl max-w-3xl w-full p-6 md:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto text-left">
+            <button onclick="closeModal('modal-2')" class="absolute top-6 right-6 text-gray-400 hover:text-white bg-gray-800 p-2 rounded-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="space-y-2">
+                <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Guide Technique N°2</span>
+                <h3 class="text-2xl font-extrabold text-white">Le Guide du Montage Pro, du BIOS et des Profils EXPO/XMP</h3>
+            </div>
+            <div class="space-y-4 text-xs md:text-sm text-gray-300 leading-relaxed">
+                <p>Un PC monté proprement et optimisé se revend deux fois mieux et ne génère aucun retour SAV de la part de l'acheteur. Voici les étapes cruciales d'un assemblage professionnel.</p>
+
+                <h4 class="font-bold text-white text-base pt-2">1. Les Branchements & Le Front Panel</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li><strong>L'Alimentation (PSU) :</strong> Ne mélangez jamais les câbles modulaires de marques différentes sous peine de griller vos composants. Utilisez strictement les câbles fournis avec le bloc d'alimentation.</li>
+                    <li><strong>Le Front Panel (Boîtier) :</strong> Le branchement des boutons Power, Reset et des LED de façade peut être fastidieux. Utilisez le manuel de la carte mère ou le petit adaptateur (Q-Connector) souvent fourni pour clipser les pins proprement.</li>
+                    <li><strong>Le sens des ventilateurs (Airflow) :</strong> Veillez à ce que les ventilateurs de façade aspirent l'air frais vers l'intérieur, tandis que ceux de l'arrière et du top l'extraient vers l'extérieur.</li>
+                </ul>
+
+                <h4 class="font-bold text-white text-base pt-2">2. Configuration du BIOS : Activer le profil EXPO / XMP</h4>
+                <p>C'est l'erreur numéro un des débutants : 90% des utilisateurs oublient d'activer le profil de mémoire dans le BIOS.</p>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li>Au démarrage du PC, tapotez sur la touche <em>Suppr (Del)</em> ou <em>F2</em> pour entrer dans le BIOS.</li>
+                    <li>Repérez l'option <strong>XMP</strong> (chez Intel) ou <strong>EXPO</strong> (chez AMD Ryzen 5000/7000/9000).</li>
+                    <li>Activez le profil (Profil 1). Sans cela, votre mémoire RAM cadencée à 3600MHz ou 6000MHz tournera par défaut à sa fréquence de base de sécurité (ex: 2133MHz ou 4800MHz), bridant les performances globales du processeur en jeu.</li>
+                    <li>Profitez-en pour vérifier que l'ordre de boot priorise votre clé USB d'installation Windows ou votre SSD principal.</li>
+                </ul>
+
+                <h4 class="font-bold text-white text-base pt-2">3. Installation Propre de Windows & Drivers</h4>
+                <p>Installez Windows de préférence via une clé USB officielle bootable. Une fois sur le bureau, téléchargez directement les derniers pilotes graphiques (Nvidia GeForce Experience ou AMD Adrenalin) et rendez-vous sur le site du constructeur de votre carte mère pour installer les chipsets à jour.</p>
+            </div>
+            <div class="pt-4 border-t border-gray-800 flex justify-between items-center">
+                <span class="text-[11px] text-gray-500">HardwareSafe - Open Source Knowledge</span>
+                <button onclick="closeModal('modal-2')" class="bg-gray-800 hover:bg-gray-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MODALE GUIDE 3 : NÉGOCIATION & ANTI-ARNAQUE ================= -->
+    <div id="modal-3" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-gray-900 border border-gray-800 rounded-3xl max-w-3xl w-full p-6 md:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto text-left">
+            <button onclick="closeModal('modal-3')" class="absolute top-6 right-6 text-gray-400 hover:text-white bg-gray-800 p-2 rounded-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="space-y-2">
+                <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Guide Technique N°3</span>
+                <h3 class="text-2xl font-extrabold text-white">Négociation & Prévention des Arnaques sur LeBonCoin et Vinted</h3>
+            </div>
+            <div class="space-y-4 text-xs md:text-sm text-gray-300 leading-relaxed">
+                <p>Le marché de l'occasion sur LeBonCoin ou Vinted attire autant de bonnes affaires que d'escrocs professionnels. Apprenez à sécuriser vos transactions de A à Z.</p>
+
+                <h4 class="font-bold text-white text-base pt-2">1. Déjouer les pièges des faux paiements (Phishing)</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li><strong>Le piège du faux SMS / Faux email :</strong> Un acheteur vous envoie un lien prétendument hébergé par LeBonCoin ou Vinted disant : <em>"Votre article a été acheté, cliquez ici pour valider et recevoir vos fonds"</em>. C'est 100% une arnaque. Le site officiel ne vous demandera jamais de renseigner votre carte bancaire ou vos codes d'accès par SMS pour recevoir de l'argent.</li>
+                    <li>Restez toujours dans l'application officielle pour valider, payer ou suivre une livraison.</li>
+                </ul>
+
+                <h4 class="font-bold text-white text-base pt-2">2. Règle d'or pour l'achat de PC complets : La main propre</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li>N'achetez jamais un PC complet de valeur par transporteur s'il n'est pas ultra-protégé (risque de casse du ventirad, fissure de la vitre en verre trempé ou arrachage du port PCIe de la carte graphique).</li>
+                    <li>Privilégiez la remise en main propre. Exigez de tester brièvement la machine chez le vendeur (ou demandez une courte vidéo en direct montrant le PC allumé avec les specs CPU-Z et FurMark à l'écran).</li>
+                </ul>
+
+                <h4 class="font-bold text-white text-base pt-2">3. Comment négocier efficacement sans froisser le vendeur</h4>
+                <ul class="list-disc pl-5 space-y-1 text-gray-400">
+                    <li><strong>Argumentez factuellement :</strong> Ne dites pas "Je t'en donne la moitié", mais pointez des éléments précis : <em>"Le modèle de carte graphique a quelques années, la pâte thermique est à changer, et le stockage est limité, je vous propose X € cash avec déplacement rapide ce soir"</em>.</li>
+                    <li><strong>Soyez réactif et courtois :</strong> Les meilleures affaires sur Leboncoin se jouent dans les 30 premières minutes. Un acheteur poli, ponctuel et réactif obtiendra toujours un meilleur prix qu'un profil agressif ou fantôme.</li>
+                </ul>
+            </div>
+            <div class="pt-4 border-t border-gray-800 flex justify-between items-center">
+                <span class="text-[11px] text-gray-500">HardwareSafe - Open Source Knowledge</span>
+                <button onclick="closeModal('modal-3')" class="bg-gray-800 hover:bg-gray-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript pour gérer l'ouverture/fermeture des modales -->
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        window.onclick = function(event) {
+            ['modal-1', 'modal-2', 'modal-3'].forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target === modal) {
+                    closeModal(id);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
